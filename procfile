@@ -1,1 +1,1 @@
-web: gunicorn wesit_es_sworia.wsgi --log-file -
+web: gunicorn wesit_es_sworia.wsgi
