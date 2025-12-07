@@ -1,2 +1,2 @@
 web: gunicorn wesit_es_sworia.wsgi
-#aman exla tu arimushava
+
