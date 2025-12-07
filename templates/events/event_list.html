@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}My Events{% endblock %}
+{% block content %}
+
+<h2>My Events</h2>
+<a href="{% url 'event-create' %}" class="btn btn-success mb-3">Create Event</a>
+
+{% if events %}
+    <div class="row">
+        {% for e in events %}
+            <div class="col-md-6 mb-3">
+                <div class="card" style="border-left: 6px solid #6c757d;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ e.title }}</h5>
+                        <p class="card-text">
+                            {% if e.description %}
+                                {{ e.description|linebreaksbr }}
+                            {% else %}
+                                No description
+                            {% endif %}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                {% if e.date %}
+                                    {{ e.date|date:"F j, Y" }}
+                                {% else %}
+                                    No date set
+                                {% endif %}
+                            </small>
+                        </p>
+                        <a href="{% url 'event-update' e.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a href="{% url 'event-delete' e.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No events yet. Create your first event.</p>
+{% endif %}
+
+{% endblock %}
