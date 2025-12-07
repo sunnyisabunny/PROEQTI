@@ -13,11 +13,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -----------------------
 # Generate one with:
 # python -c "import secrets; print(secrets.token_urlsafe(50))"
-SECRET_KEY = secrets.token_urlsafe(50)
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'random_fallback_secret_for_dev')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -91,6 +91,10 @@ USE_TZ = True
 
 # Static files
 STATIC_URL = '/static/'
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
