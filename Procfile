@@ -1,0 +1,1 @@
+web: gunicorn wesit_es_sworia.wsgi
