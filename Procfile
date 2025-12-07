@@ -1,1 +1,1 @@
-web: gunicorn wesit_es_sworia.wsgi
+web: gunicorn wesit_es_sworia:wsgi
