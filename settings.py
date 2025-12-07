@@ -1,5 +1,5 @@
 """
-Django settings for event_project.
+Django settings wesit_es_sworia.
 """
 
 from pathlib import Path
@@ -41,7 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'event_project.urls'
+ROOT_URLCONF = 'wesit_es_sworia.urls'
 
 TEMPLATES = [
     {
@@ -59,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'event_project.wsgi.application'
+WSGI_APPLICATION = 'wesit_es_sworia.wsgi.application'
 
 # Database (SQLite, fine for a student project)
 DATABASES = {

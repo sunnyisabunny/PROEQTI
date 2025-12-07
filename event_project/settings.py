@@ -1,5 +1,5 @@
 """
-Django settings for event_project.
+Django settings for wesit_es_sworia.
 """
 
 from pathlib import Path
@@ -8,11 +8,6 @@ import secrets
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# -----------------------
-# SECRET KEY (generate and paste it here)
-# -----------------------
-# Generate one with:
-# python -c "import secrets; print(secrets.token_urlsafe(50))"
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'random_fallback_secret_for_dev')
 
 DEBUG = False
@@ -47,12 +42,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'event_project.urls'
+ROOT_URLCONF = 'wesit_es_sworia.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # ✅ this is correct
+        'DIRS': [BASE_DIR / 'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'event_project.wsgi.application'
+WSGI_APPLICATION = 'wesit_es_sworia.wsgi.application'
 
 # Database (SQLite, fine for a student project)
 DATABASES = {
