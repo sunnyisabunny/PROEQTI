@@ -19,7 +19,7 @@ def event_create(request):
             return redirect('event-list')
     else:
         form = EventForm()
-    return render(request, 'events/event_form.html', {'form': form})
+    return render(request, 'events/event_form.html', {'form': form, "event": None})
 
 @login_required
 def event_update(request, pk):

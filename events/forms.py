@@ -6,5 +6,5 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = ['title', 'description', 'date', 'category']
         widgets = {
-            'date': forms.DateInput(attrs={'class': 'datepicker', 'autocomplete': 'off'}),
+            'date': forms.DateInput(attrs={'type': 'date'})
         }
